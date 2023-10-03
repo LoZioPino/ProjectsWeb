@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project n.5</title>
+    
+
+<link rel="stylesheet" type="text/css" href="contentslider2.css" />
+
+
+<script type="text/javascript" src="contentslider2.js">
+	
+
+/***********************************************
+* Featured Content Slider- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Please keep this notice intact
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<h2>Advanced internet programming projects</h2>
+
+<!--Inner content DIVs should always carry "contentdiv" CSS class-->
+<!--Pagination DIV should always carry "paginate-SLIDERID" CSS class-->
+
+<div id="slider" class="sliderwrapper">
+	
+
+</div>
+
+<div id="paginate-slider" class="pagination">
+	
+	
+
+<a href="#" id="1" class="toc">Project n.1</a> <a href="#" id="2" class="toc anotherclass">Project n.2</a> <a href="#" id="3" class="toc">Project n.3</a> <a href="#" id="4" class="toc">Project n.4</a> <a href="#" class="prev" style="margin-left: 10px"><</a> <a href="#" class="next">></a>
+
+</div>
+<div id="description1" class="description" style="display:none;">HTML table </div>
+<div id="description2" class="description" style="display:none;">CSS table </div>
+<div id="description3" class="description" style="display:none;">Generate and sort random numbers </div>
+<div id="description4" class="description" style="display:none;">Responsive web page </div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#1").hover(function(event){
+    $("#description1").fadeIn();
+  }, function(){
+    $("#description1").fadeOut();
+  });
+  $("#2").hover(function(event){
+    $("#description2").fadeIn();
+  }, function(){
+    $("#description2").fadeOut();
+  });
+  $("#3").hover(function(event){
+    $("#description3").fadeIn();
+  }, function(){
+    $("#description3").fadeOut();
+  });
+  $("#4").hover(function(event){
+    $("#description4").fadeIn();
+  }, function(){
+    $("#description4").fadeOut();
+  });
+});
+$(document).ready(function(){
+  $("#1").click(function(event){
+	$("#description1").toggleClass("myClass"),
+   setTimeout(()=>{$("#description1").toggleClass("backupdescription")}, 1000)});
+   $("#2").click(function(event){
+	$("#description2").toggleClass("myClass"),
+   setTimeout(()=>{$("#description2").toggleClass("backupdescription")}, 1000)});
+   $("#3").click(function(event){
+	$("#description3").toggleClass("myClass"),
+   setTimeout(()=>{$("#description3").toggleClass("backupdescription")}, 1000)});
+   $("#4").click(function(event){
+	$("#description4").toggleClass("myClass"),
+   setTimeout(()=>{$("#description4").toggleClass("backupdescription")}, 1000)});
+});
+featuredcontentslider.init({
+	id: "slider",  //id of main slider DIV
+	contentsource: ["ajax", "content.html"],  //Valid values: ["inline", ""] or ["ajax", "path_to_file"]
+	toc: "markup",  //Valid values: "#increment", "markup", ["label1", "label2", etc]
+	nextprev: ["Previous", "Next"],  //labels for "prev" and "next" links. Set to "" to hide.
+	revealtype: "click", //Behavior of pagination links to reveal the slides: "click" or "mouseover"
+	enablefade: [true, 0.2],  //[true/false, fadedegree]
+	autorotate: [true, 3000],  //[true/false, pausetime]
+	onChange: function(previndex, curindex, contentdivs){  //event handler fired whenever script changes slide
+		//previndex holds index of last slide viewed b4 current (0=1st slide, 1=2nd etc)
+		//curindex holds index of currently shown slide (0=1st slide, 1=2nd etc)
+	}
+})
+
+</script>
+    
+</body>
+</html>

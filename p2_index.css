@@ -1,0 +1,41 @@
+
+.table {
+    display: table;
+    width:50%
+ }
+ .table .tr{
+    display:table-row;
+ }
+ .table .td {
+    
+    border: 1px solid #999999;
+	display: table-cell;
+	padding: 5px 10px;
+  }
+body{
+    font-family:sans-serif;
+}
+.table .caption{
+    text-transform: uppercase;
+    font-weight: bold;
+	font-size: 24px;
+	text-align: left;
+	color: #333;
+	margin-bottom: 10px;
+    
+}
+
+   .table .tr:nth-child(even) {
+    background-color: #eee;
+   }
+   .table .tr:nth-child(2) {
+    background-color: white;
+   }
+
+
+.table .td:hover {
+    background-color: rgb(230, 152, 152);
+    }
+    .table .td:hover {
+        background-color: rgb(230, 152, 152);
+        }

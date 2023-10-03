@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project n.8</title>
+    
+
+<link rel="stylesheet" type="text/css" href="contentslider3.css" />
+
+
+<script type="text/javascript" src="contentslider2.js">
+
+</script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+<body>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="jquery.domenu-0.0.1.js"></script> 
+
+<h2>Advanced internet programming projects</h2>
+<div class="dd" id="domenu">
+  <button class="dd-new-item">+</button>
+  <li class="dd-item-blueprint">
+    <div class="dd-handle dd3-handle">Drag</div>
+    <div class="dd3-content"> <span>[item_name]</span>
+      <button class="item-remove">&times;</button>
+      <div class="dd-edit-box" style="display: none;">
+        <input type="text" name="title" placeholder="name">
+        <input type="url" name="http" placeholder="http://">
+        <i>&#x270e;</i> </div>
+    </div>
+  </li>
+  <ol class="dd-list">
+  </ol>
+</div>
+<script>
+
+  $(document).ready(function()
+  {
+
+      var updateOutput = function(e)
+      {
+          var list   = e.length ? e : $(e.target),
+              output = list.data('output');
+          if (window.JSON) {
+              output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
+          } else {
+              output.val('JSON browser support required for this demo.');
+          }
+      };
+
+      $('#domenu').domenu({
+          data: '[{"id":1,"title":"Project 1","http":"http://194.29.145.137:23880/~k-6999/p1index.html"},{"id":2,"title":"Project 2","http":"http://194.29.145.137:23880/~k-6999/p2_index.html"},{"id":3,"title":"Project 3","http":"http://194.29.145.137:23880/~k-6999/p3_index.html"},{"id":4,"title":"Project 4","http":"http://194.29.145.137:23880/~k-6999/p4_index.html"}]'
+      }).parseJson();
+      });
+      
+  
+  $(document).ready(function() {
+  
+  $('#domenu').on('click', '.dd3-content', function() {
+    var itemId = $(this).closest('.dd-item').data('id');
+    var itemName = $(this).find('span').text();
+    $('#dialog' + itemId)
+      .attr('title', itemName)
+      .dialog();
+  });
+});
+$(document).ready(function() {
+ 
+  $('#domenu').on('dblclick', '.dd3-content', function() {
+   
+    var url = $(this).closest('.dd-item').data('http');
+    window.open(url, '_blank');
+  });
+});
+  </script>
+  <div id="dialog1" style='display:none 'title="Basic dialog">
+    <p>The project n.1 represent an HTML table</p>
+  </div>
+  <div id="dialog2" style='display:none 'title="Basic dialog">
+    <p>The project n.2 represent a CSS table</p>
+  </div>
+  <div id="dialog3" style='display:none 'title="Basic dialog">
+    <p>The project n.3 represent the generation of random number and sorting of it</p>
+  </div>
+  <div id="dialog4" style='display:none 'title="Basic dialog">
+    <p>The project n.4 represent a Responsive Web Page</p>
+  </div>
+
+<div id="slider" class="sliderwrapper">
+	
+
+</div>
+
+<div id="paginate-slider" class="pagination">
+	
+	
+
+<a href="#" id="1" class="toc">Project n.1</a> <a href="#" id="2" class="toc anotherclass">Project n.2</a> <a href="#" id="3" class="toc">Project n.3</a> <a href="#" id="4" class="toc">Project n.4</a> <a href="#" class="prev" style="margin-left: 10px"><</a> <a href="#" class="next">></a>
+
+</div>
+<div id="description1" class="description" style="display:none;">HTML table </div>
+<div id="description2" class="description" style="display:none;">CSS table </div>
+<div id="description3" class="description" style="display:none;">Generate and sort random numbers </div>
+<div id="description4" class="description" style="display:none;">Responsive web page </div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#1").hover(function(event){
+    $("#description1").fadeIn();
+  }, function(){
+    $("#description1").fadeOut();
+  });
+  $("#2").hover(function(event){
+    $("#description2").fadeIn();
+  }, function(){
+    $("#description2").fadeOut();
+  });
+  $("#3").hover(function(event){
+    $("#description3").fadeIn();
+  }, function(){
+    $("#description3").fadeOut();
+  });
+  $("#4").hover(function(event){
+    $("#description4").fadeIn();
+  }, function(){
+    $("#description4").fadeOut();
+  });
+});
+$(document).ready(function(){
+  $("#1").click(function(event){
+	$("#description1").toggleClass("myClass"),
+   setTimeout(()=>{$("#description1").toggleClass("backupdescription")}, 1000)});
+   $("#2").click(function(event){
+	$("#description2").toggleClass("myClass"),
+   setTimeout(()=>{$("#description2").toggleClass("backupdescription")}, 1000)});
+   $("#3").click(function(event){
+	$("#description3").toggleClass("myClass"),
+   setTimeout(()=>{$("#description3").toggleClass("backupdescription")}, 1000)});
+   $("#4").click(function(event){
+	$("#description4").toggleClass("myClass"),
+   setTimeout(()=>{$("#description4").toggleClass("backupdescription")}, 1000)});
+});
+featuredcontentslider.init({
+	id: "slider",  //id of main slider DIV
+	contentsource: ["ajax", "content.html"],  //Valid values: ["inline", ""] or ["ajax", "path_to_file"]
+	toc: "markup",  //Valid values: "#increment", "markup", ["label1", "label2", etc]
+	nextprev: ["Previous", "Next"],  //labels for "prev" and "next" links. Set to "" to hide.
+	revealtype: "click", //Behavior of pagination links to reveal the slides: "click" or "mouseover"
+	enablefade: [true, 0.2],  //[true/false, fadedegree]
+	autorotate: [false, 4000],  //[true/false, pausetime]
+	onChange: function(previndex, curindex, contentdivs){  //event handler fired whenever script changes slide
+		//previndex holds index of last slide viewed b4 current (0=1st slide, 1=2nd etc)
+		//curindex holds index of currently shown slide (0=1st slide, 1=2nd etc)
+	}
+})
+
+</script>
+    
+</body>
+</html>

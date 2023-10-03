@@ -1,0 +1,51 @@
+<html ng-app="projectApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
+    <script>
+      var projectApp = angular.module('projectApp', ['ngRoute']);
+
+      projectApp.config(function($routeProvider) {
+        $routeProvider.
+          when('/', {
+            templateUrl: 'project-list.html',
+            controller: 'ProjectListCtrl'
+          }).
+          when('/:projectName', {
+            templateUrl: 'project-detail.html',
+            controller: 'ProjectDetailCtrl'
+          }).
+          otherwise({
+            redirectTo: '/'
+          });
+      });
+
+      projectApp.factory('projects', function($http){
+        return {
+          list: function(callback){
+            $http.get('projects.json').success(callback);
+          }
+        };
+      });
+
+      projectApp.controller('ProjectListCtrl', function ($scope, projects){
+        projects.list(function(projects) {
+          $scope.projects = projects;
+        });
+      });
+
+      countryApp.controller('ProjectDetailCtrl', function ($scope, $routeParams, $http){
+        $http.get('projects.json').success(function(data) {
+          $scope.project = data.filter(function(entry){
+            return entry.name === $routeParams.projectName
+          })[0];
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div ng-view></div>
+  </body>
+</html>

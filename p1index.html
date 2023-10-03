@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project 1</title>
+    <link rel="stylesheet" href="p1index.css">
+  </head>
+
+<body>
+    <script src="p1index.js"></script>
+
+
+<table>
+    <caption>Project n.1 Vincenzo_Murro</caption>
+ <tr>
+  <td class="cell-highlight">First name</td>
+  <td rowspan="2">
+  <form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="name"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="surname"><br><br>
+</form> 
+</td>
+
+</tr>
+<tr>
+  <td class="cell-highlight"> Last name</td>
+</tr>
+
+<tr>
+  <td>Age</td>
+  <td>
+  <select id="age" >
+      <option value="17">17 </option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+ </select>
+  
+<tr>
+  <td>Sex</td>
+  <td>
+  <form>
+  <input type="radio" id="Male" name="Sex" value="Male">
+  <label for="Male">Male</label><br>
+  <input type="radio" id="Female" name="Sex" value="Female">
+  <label for="Female">Female</label><br>
+</form> 
+</td>
+</tr>
+
+<tr>
+  <td>Hobby</td>
+  <td>
+  <form>
+  <input type="checkbox" id="Hobbyl" name="Hobby" value="Soccer">
+  <label for="Hobby1">Soccer</label><br>
+  <input type="checkbox" id="Hobby2" name="Hobby" value="Basket">
+  <label for="Hobby2">Basket</label><br>
+  <input type="checkbox" id="Hobby3" name="Hobby" value="Hockey">
+  <label for="Hobby3">Hockey</label><br>
+  <input type="checkbox" id="Hobby4" name="Hobby" value="Running">
+  <label for="Hobby4">Running</label><br>
+  <input type="checkbox" id="Hobby5" name="Hobby" value="Others">
+  <label for="Hobby6">Others</label><br>
+  </form>
+</tr>
+ <tr>
+ <td> 
+<button onclick="printFunction()">OK</button>
+</td>
+<td>
+    <button onclick="clearFunction()">Cancel</button>
+</td>
+</tr>
+</table>
